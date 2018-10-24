@@ -1,0 +1,12 @@
+.outer-paper {
+  margin-top: 20px;
+  margin: auto;
+  padding: 20px;
+  width: 60%;
+}
+
+.board-container {
+  width: 450px;
+  margin: 0 auto;
+
+}

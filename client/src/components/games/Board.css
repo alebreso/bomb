@@ -1,0 +1,12 @@
+.board-tile {
+  height: 50px;
+  width: 50px;
+}
+
+.board-tile.x {
+  background: green;
+}
+
+.board-tile.o {
+  background: red;
+}
