@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import './SignupForm.css'
+import { Input, Button, CardContent, } from 'material-ui';
 
 export default class SignupForm extends PureComponent {
 	state = {}
@@ -20,27 +21,29 @@ export default class SignupForm extends PureComponent {
 	render() {
 		return (
       <div className="signup-form">
+			<CardContent>
   			<form onSubmit={this.handleSubmit}>
-  				<label>
-            Email
-            <input type="email" name="email" value={
+					<label>
+					Email<br/>
+            <Input color="primary" type="email" name="email" value={
   						this.state.email || ''
-  					} onChange={ this.handleChange } />
+  					} onChange={ this.handleChange } 
+						autoFocus="true"/>
           </label>
   					
   				<label>
-            Password
-  					<input type="password" name="password" value={
+					Password<br/>
+  					<Input color="primary" type="password" name="password" value={
   						this.state.password || ''
   					} onChange={ this.handleChange } />
   				</label>
 
-  				<label>
-            Confirm password
-  					<input type="password" name="confirmPassword" value={
+  				<label> 
+					Confirm password<br/>
+  					<Input color="primary" type="password" name="confirmPassword" value={
   						this.state.confirmPassword || ''
   					} onChange={ this.handleChange } />
-  				</label>
+  				</label><br/>
 
   				{
   					this.state.password &&
@@ -49,8 +52,9 @@ export default class SignupForm extends PureComponent {
   					<p style={{color:'red'}}>The passwords do not match!</p>
   				}
 
-  				<button type="submit">Sign up</button>
+  				<Button variant="raised" color="primary" type="submit">Sign up</Button>
   			</form>
+				</CardContent>
       </div>
 		)
 	}

@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import './LoginForm.css'
+import { Input, Button } from 'material-ui';
 
 export default class LoginForm extends PureComponent {
 	state = {}
@@ -22,20 +23,20 @@ export default class LoginForm extends PureComponent {
       <div className="login-form">
   			<form onSubmit={this.handleSubmit}>
   				<label>
-            Email
-            <input type="email" name="email" value={
+            Email<br/>
+            <Input color="primary" type="email" name="email" value={
   						this.state.email || ''
-  					} onChange={ this.handleChange } />
+  					} onChange={ this.handleChange } autoFocus="true"/>
           </label>
 
   				<label>
-            Password
-            <input type="password" name="password" value={
+            Password<br/>
+            <Input color="primary" type="password" name="password" value={
   						this.state.password || ''
   					} onChange={ this.handleChange } />
-          </label>
+          </label><br/>
 
-  				<button type="submit">Login</button>
+  				<Button variant="raised" color="primary" type="submit">Login</Button>
   			</form>
 		  </div>)
 	}

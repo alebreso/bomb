@@ -7,6 +7,7 @@ import { userId } from '../../jwt';
 import Paper from 'material-ui/Paper';
 import Board from './Board';
 import './GameDetails.css';
+import { Button } from 'material-ui';
 
 class GameDetails extends PureComponent {
   componentWillMount() {
@@ -65,7 +66,7 @@ class GameDetails extends PureComponent {
 
         {game.status === 'pending' &&
           game.players.map(p => p.userId).indexOf(userId) === -1 && (
-            <button onClick={this.joinGame}>Join Game</button>
+            <Button variant="raised" color="primary" style={{flex: 1}} onClick={this.joinGame}>Join Game</Button>
           )}
 
         {winner && <p>Winner: {users[winner].firstName}</p>}

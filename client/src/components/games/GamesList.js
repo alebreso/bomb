@@ -64,6 +64,7 @@ class GamesList extends PureComponent {
         onClick={createGame}
         className="create-game"
       >
+      <i class="material-icons md-36">add</i>
         Create Game
       </Button>
 
