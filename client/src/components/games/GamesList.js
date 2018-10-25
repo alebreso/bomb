@@ -5,10 +5,26 @@ import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import Button from 'material-ui/Button'
 import Paper from 'material-ui/Paper'
-import Card from 'material-ui/Card'
+import Card, { CardActions } from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
 import './GamesList.css'
 import { ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from 'material-ui';
+import { withStyles } from '@material-ui/core/styles';
+
+const StyledButton = withStyles({
+  root: {
+    background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 21,
+    padding: '0 30px',
+    boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)',
+  },
+  label: {
+    textTransform: 'capitalize',
+  },
+})(Button);
 
 class GamesList extends PureComponent {
   componentWillMount() {
@@ -41,13 +57,14 @@ class GamesList extends PureComponent {
           <Typography color="textSecondary">
             Status: {game.status}
           </Typography>
-        
-            <Button
+            <CardActions>
+            <StyledButton
             size="small"
             onClick={() => history.push(`/games/${game.id}`)}
             >
             JOIN
-            </Button>
+            </StyledButton>
+            </CardActions>
         </ExpansionPanelDetails>
       </ExpansionPanel>
     </Card>)
