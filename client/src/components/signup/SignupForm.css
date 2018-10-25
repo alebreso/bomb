@@ -1,3 +1,10 @@
 .signup-form label {
   display: block;
 }
+
+.signup-form {
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  width: 60%;
+}
