@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import './SignupForm.css'
-import { Input, Button, CardContent, } from 'material-ui';
+import { Input, Button, CardContent, Paper } from 'material-ui';
 
 export default class SignupForm extends PureComponent {
 	state = {}
@@ -20,7 +20,9 @@ export default class SignupForm extends PureComponent {
 
 	render() {
 		return (
+
       <div className="signup-form">
+	  	<Paper>	
 			<CardContent>
   			<form onSubmit={this.handleSubmit}>
 					<label>
@@ -55,6 +57,7 @@ export default class SignupForm extends PureComponent {
   				<Button variant="raised" color="primary" type="submit">Sign up</Button>
   			</form>
 				</CardContent>
+			</Paper>	
       </div>
 		)
 	}
