@@ -23,6 +23,7 @@ export default class SignupForm extends PureComponent {
 
       <div className="signup-form">
 	  	<Paper style={{fontSize: '20px', fontFamily: 'Chakra Petch'}}>	
+		  <h1 className="title">Sign up</h1>
 			<CardContent style={{fontSize: '20px', fontFamily: 'Chakra Petch'}}>
   			<form onSubmit={this.handleSubmit}>
 					<label>

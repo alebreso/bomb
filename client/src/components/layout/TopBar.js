@@ -10,8 +10,10 @@ import {connect} from 'react-redux'
 const TopBar = (props) => {
   const { location, history, user } = props
 
+const primary = '#00352c'
+
   return (
-    <AppBar position="absolute" color="primary" style={{zIndex:10}}>
+    <AppBar position="absolute" backgroundColor="slategrey" style={{zIndex:10}}>
       <Toolbar>
         <Typography variant="title" color="inherit" style={{flex: 1, fontSize: '20px', fontFamily: 'Chakra Petch'}}>
         Mine-field
