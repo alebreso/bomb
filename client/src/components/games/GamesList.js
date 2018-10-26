@@ -37,12 +37,12 @@ class GamesList extends PureComponent {
           Status: {game.status}
         </Typography>
       </CardContent>
-      <CardActions style={{fontFamily: 'Chakra Petch', fontSize: '15px', backgroundColor: 'red', border: '2px solid black'}}>
+      <CardActions style={{fontFamily: 'Chakra Petch', fontSize: '15px', backgroundColor: 'darkgreen', border: '2px solid black'}}>
         <Button 
           size="small"
           onClick={() => history.push(`/games/${game.id}`)}
         >
-          Watch
+          Join
         </Button>
       </CardActions>
     </Card>)
