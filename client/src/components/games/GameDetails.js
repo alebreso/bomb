@@ -78,7 +78,7 @@ class GameDetails extends PureComponent {
 
         {game.status === 'pending' &&
           game.players.map(p => p.userId).indexOf(userId) === -1 && (
-            <Button variant="raised" color="primary" style={{flex: 1}} onClick={this.joinGame}>Join Game</Button>
+            <Button variant="raised" style={{flex: 1, backgroundColor: 'darkolivegreen', color: 'white'}} onClick={this.joinGame}>Join Game</Button>
           )}
 
         {winner && <p>Winner: {users[winner].firstName}</p>}

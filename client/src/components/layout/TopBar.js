@@ -10,8 +10,6 @@ import {connect} from 'react-redux'
 const TopBar = (props) => {
   const { location, history, user } = props
 
-const primary = '#00352c'
-
   return (
     <AppBar position="absolute" backgroundColor="slategrey" style={{zIndex:10, backgroundColor: 'darkolivegreen' }}>
       <Toolbar>
@@ -25,11 +23,11 @@ const primary = '#00352c'
 
         {
           location.pathname.indexOf('signup') > 0 &&
-          <Button style={{flex: 1, fontSize: '20px', fontFamily: 'Chakra Petch'}} variant="raised" onClick={() => history.push('/login')}><i class="material-icons">fingerprint</i>Login</Button>
+          <Button style={{fontSize: '20px', fontFamily: 'Chakra Petch'}} onClick={() => history.push('/login')}><i class="material-icons">fingerprint</i>Login</Button>
         }
         {
           location.pathname.indexOf('login') > 0 &&
-          <Button style={{color: 'Venom Green', fontSize: '15px', fontFamily: 'Chakra Petch', color: 'white'}} variant="raised" color="primary" onClick={() => history.push('/signup')}><i class="material-icons">account_circle</i>Sign up</Button>
+          <Button style={{fontSize: '15px', fontFamily: 'Chakra Petch', color: 'white'}} onClick={() => history.push('/signup')}><i class="material-icons">account_circle</i>Sign up</Button>
         }
         {
           location.pathname.indexOf('games/') > 0 &&

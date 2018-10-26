@@ -30,7 +30,7 @@ export default class LoginForm extends PureComponent {
             Email<br/>
             <Input color="black" type="email" name="email" value={
   						this.state.email || ''
-  					} onChange={ this.handleChange } autoFocus="true"/>
+  					} onChange={ this.handleChange }/>
           </label>
 
   				<label>
