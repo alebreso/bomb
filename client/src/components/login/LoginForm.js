@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react'
 import './LoginForm.css'
-import { Input, Button } from 'material-ui';
+import { Input, Button, Paper } from 'material-ui';
+
+const primary = '#224a07'
 
 export default class LoginForm extends PureComponent {
 	state = {}
@@ -21,23 +23,26 @@ export default class LoginForm extends PureComponent {
 	render() {
 		return (
       <div className="login-form">
+			<Paper style={{paddingBottom: '50px', paddingTop: '50px', backgroundColor: 'gray' }}>
+			<h1>Login</h1>
   			<form onSubmit={this.handleSubmit}>
   				<label>
             Email<br/>
-            <Input color="primary" type="email" name="email" value={
+            <Input color="black" type="email" name="email" value={
   						this.state.email || ''
   					} onChange={ this.handleChange } autoFocus="true"/>
           </label>
 
   				<label>
             Password<br/>
-            <Input color="primary" type="password" name="password" value={
+            <Input color="black" type="password" name="password" value={
   						this.state.password || ''
   					} onChange={ this.handleChange } />
           </label><br/>
 
-  				<Button variant="raised" color="primary" type="submit">Login</Button>
+  				<Button style={{backgroundColor: 'darkgrey',color: 'darkgreen', fontSize: '15px', fontFamily: 'Chakra Petch', fontWeight: 'bolder'}} variant="raised" color={primary} type="submit">Login</Button>
   			</form>
+				</Paper>
 		  </div>)
 	}
 }

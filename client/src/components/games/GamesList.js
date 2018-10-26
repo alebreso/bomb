@@ -37,6 +37,33 @@ class GamesList extends PureComponent {
   renderGame = (game) => {
     const {users, history} = this.props
 
+
+    return (<Card key={game.id} className="game-card">
+      <CardContent style={{backgroundColor: 'lightgrey', border: '3px solid black'}}>
+        <Typography style={{fontFamily: 'Chakra Petch', fontSize: '15px'}}>
+          This game is played by&nbsp;
+          {
+            game.players
+              .map(player => users[player.userId].firstName)
+              .join(' and ')
+          }
+        </Typography>
+        <Typography style={{fontFamily: 'Chakra Petch', fontSize: '25px', fontStyle: 'bolder', fontWeight: '900'}}>
+          Game #{game.id}
+        </Typography>
+        <Typography style={{fontFamily: 'Chakra Petch', fontSize: '20px'}}>
+          Status: {game.status}
+        </Typography>
+      </CardContent>
+      <CardActions style={{fontFamily: 'Chakra Petch', fontSize: '15px', backgroundColor: 'darkgreen', border: '2px solid black'}}>
+        <Button 
+          size="small"
+          onClick={() => history.push(`/games/${game.id}`)}
+        >
+          Join
+        </Button>
+      </CardActions>
+
     return (
     <Card key={game.id} className="game-card">
       <ExpansionPanel>
@@ -67,6 +94,7 @@ class GamesList extends PureComponent {
             </CardActions>
         </ExpansionPanelDetails>
       </ExpansionPanel>
+
     </Card>)
   }
 
@@ -80,13 +108,24 @@ class GamesList extends PureComponent {
     if (games === null || users === null) return null
 
     return (
+
+    <Paper className="outer-paper" style={{paddingBottom: '50px', paddingTop: '50px', backgroundColor: 'gray' }}>
+
     <Paper className="outer-paper">
+
       <Button
         color="primary"
         variant="raised"
         onClick={createGame}
+
+        className="create-game"
+        style={{backgroundColor: 'darkolivegreen'}}
+      >
+      <i class="material-icons md-36">add</i>
+
         className="create-game">
       <i class="material-icons">add</i>
+
         Create Game
       </Button>
 

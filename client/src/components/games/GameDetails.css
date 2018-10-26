@@ -3,10 +3,27 @@
   margin: auto;
   padding: 20px;
   width: 60%;
+  font-family: 'Chakra Petch', sans-serif;
+  border: 10px dashed black;
 }
 
 .board-container {
   width: 450px;
   margin: 0 auto;
+}
 
+h1 {
+  text-align: center;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+p {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 1.5em;
+  color: rgb(42, 60, 43);
+  font-weight: 1000;
+}
+
+.title {
+  font-family: 'Chakra Petch', sans-serif;
 }
