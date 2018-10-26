@@ -8,10 +8,15 @@
 .board-container {
   width: 450px;
   margin: 0 auto;
-
 }
 
 h1 {
   text-align: center;
   font-family: 'Chakra Petch', sans-serif;
+}
+
+p {
+  font-family: 'Chakra Petch', sans-serif;
+  color: yellowgreen;
+  font-weight: bolder 
 }

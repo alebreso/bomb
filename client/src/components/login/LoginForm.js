@@ -40,7 +40,7 @@ export default class LoginForm extends PureComponent {
   					} onChange={ this.handleChange } />
           </label><br/>
 
-  				<Button style={{backgroundColor: 'slategrey',color: 'darkgreen', fontSize: '15px', fontFamily: 'Chakra Petch', fontWeight: 'bolder'}} variant="raised" color={primary} type="submit">Login</Button>
+  				<Button style={{backgroundColor: 'darkgrey',color: 'darkgreen', fontSize: '15px', fontFamily: 'Chakra Petch', fontWeight: 'bolder'}} variant="raised" color={primary} type="submit">Login</Button>
   			</form>
 				</Paper>
 		  </div>)
