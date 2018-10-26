@@ -22,8 +22,8 @@ export default class SignupForm extends PureComponent {
 		return (
 
       <div className="signup-form">
-	  	<Paper>	
-			<CardContent>
+	  	<Paper style={{fontSize: '20px', fontFamily: 'Chakra Petch'}}>	
+			<CardContent style={{fontSize: '20px', fontFamily: 'Chakra Petch'}}>
   			<form onSubmit={this.handleSubmit}>
 					<label>
 					Email<br/>
@@ -54,7 +54,7 @@ export default class SignupForm extends PureComponent {
   					<p style={{color:'red'}}>The passwords do not match!</p>
   				}
 
-  				<Button variant="raised" color="primary" type="submit">Sign up</Button>
+  				<Button style={{color: 'green', fontSize: '15px', fontFamily: 'Chakra Petch'}} variant="raised" type="submit">Sign up</Button>
   			</form>
 				</CardContent>
 			</Paper>	

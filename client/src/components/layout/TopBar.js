@@ -13,25 +13,25 @@ const TopBar = (props) => {
   return (
     <AppBar position="absolute" color="primary" style={{zIndex:10}}>
       <Toolbar>
-        <Typography variant="title" color="inherit" style={{flex: 1}}>
+        <Typography variant="title" color="inherit" style={{flex: 1, fontSize: '20px', fontFamily: 'Chakra Petch'}}>
         Mine-field
         </Typography>
         {
           user &&
-          <Button color="inherit"><i className="material-icons">check_circle_outline</i> { user.firstName }</Button>
+          <Button color="inherit" ><i className="material-icons">check_circle_outline</i> { user.firstName }</Button>
         }
 
         {
           location.pathname.indexOf('signup') > 0 &&
-          <Button variant="raised" color="primary" onClick={() => history.push('/login')}><i class="material-icons">fingerprint</i>Login</Button>
+          <Button style={{flex: 1, fontSize: '20px', fontFamily: 'Chakra Petch'}} variant="raised" color="primary" onClick={() => history.push('/login')}><i class="material-icons">fingerprint</i>Login</Button>
         }
         {
           location.pathname.indexOf('login') > 0 &&
-          <Button variant="raised" color="primary" onClick={() => history.push('/signup')}><i class="material-icons">account_circle</i>Sign up</Button>
+          <Button style={{color: 'Venom Green', fontSize: '15px', fontFamily: 'Chakra Petch'}} variant="raised" color="primary" onClick={() => history.push('/signup')}><i class="material-icons">account_circle</i>Sign up</Button>
         }
         {
           location.pathname.indexOf('games/') > 0 &&
-          <Button variant="raised" color="primary" onClick={() => history.push('/games')}>All Games</Button>
+          <Button style={{fontSize: '15px', fontFamily: 'Chakra Petch'}}variant="raised" color="primary" onClick={() => history.push('/games')}>All Games</Button>
         }
         {
           /games$/.test(location.pathname) &&

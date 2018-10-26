@@ -10,3 +10,9 @@
 .board-tile.o {
   background: red;
 }
+
+body {
+  background-image: url('stones.jpg');
+  background-size: cover;
+  font-family: 'Chakra Petch', sans-serif;
+}
