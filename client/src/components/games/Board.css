@@ -10,3 +10,7 @@
 .board-tile.o {
   background: red;
 }
+
+.board-tile.h {
+  background: orange;
+}

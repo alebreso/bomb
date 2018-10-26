@@ -10,7 +10,8 @@ import {
   ForbiddenError,
   Get,
   Body,
-  Patch
+  Patch,
+  // Delete
 } from 'routing-controllers';
 import User from '../users/entity';
 import { Game, Player, WinningCell, /*Board*/ } from './entities';
@@ -142,4 +143,12 @@ console.log('----here----')
   getGames() {
     return Game.find();
   }
+
+  // @Authorized()
+  // @Delete('/advs/:id([0-9]+)')
+  // deleteGame(@Param('id') id: number){
+	// 	Game.delete(id)
+	// 	return 'game deleted'
+  // }
+
 }
