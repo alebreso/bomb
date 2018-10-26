@@ -33,7 +33,7 @@ const primary = '#00352c'
         }
         {
           location.pathname.indexOf('games/') > 0 &&
-          <Button style={{fontSize: '15px', fontFamily: 'Chakra Petch', color: 'white'}}variant="raised"  onClick={() => history.push('/games')}>All Games</Button>
+          <Button style={{fontSize: '15px', fontFamily: 'Chakra Petch', backgroundColor: 'darkolivegreen', color: 'white'}}variant="raised"  onClick={() => history.push('/games')}>All Games</Button>
         }
         {
           /games$/.test(location.pathname) &&

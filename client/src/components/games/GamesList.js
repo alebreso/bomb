@@ -21,8 +21,8 @@ class GamesList extends PureComponent {
     const {users, history} = this.props
 
     return (<Card key={game.id} className="game-card">
-      <CardContent>
-        <Typography color="textSecondary">
+      <CardContent style={{backgroundColor: 'lightgrey', border: '3px solid black'}}>
+        <Typography style={{fontFamily: 'Chakra Petch', fontSize: '15px'}}>
           This game is played by&nbsp;
           {
             game.players
@@ -30,15 +30,15 @@ class GamesList extends PureComponent {
               .join(' and ')
           }
         </Typography>
-        <Typography variant="headline" component="h2">
+        <Typography style={{fontFamily: 'Chakra Petch', fontSize: '25px', fontStyle: 'bolder', fontWeight: '900'}}>
           Game #{game.id}
         </Typography>
-        <Typography color="textSecondary">
+        <Typography style={{fontFamily: 'Chakra Petch', fontSize: '20px'}}>
           Status: {game.status}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button
+      <CardActions style={{fontFamily: 'Chakra Petch', fontSize: '15px', backgroundColor: 'red', border: '2px solid black'}}>
+        <Button 
           size="small"
           onClick={() => history.push(`/games/${game.id}`)}
         >
@@ -57,12 +57,14 @@ class GamesList extends PureComponent {
 
     if (games === null || users === null) return null
 
-    return (<Paper className="outer-paper">
+    return (
+    <Paper className="outer-paper" style={{paddingBottom: '50px', paddingTop: '50px', backgroundColor: 'gray' }}>
       <Button
         color="primary"
         variant="raised"
         onClick={createGame}
         className="create-game"
+        style={{backgroundColor: 'darkolivegreen'}}
       >
       <i class="material-icons md-36">add</i>
         Create Game

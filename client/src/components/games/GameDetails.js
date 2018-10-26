@@ -55,9 +55,9 @@ class GameDetails extends PureComponent {
       .map(p => p.userId)[0];
 
     return (
-      <div style={{}}>
-      <Paper className="outer-paper" style={{border: '10px dashed black',paddingBottom: '50px', paddingTop: '50px', backgroundColor: 'gray' }}>
-        <h1>Game #{game.id}</h1>
+      <div>
+      <Paper className="outer-paper" style={{ border: '10px dashed black', backgroundColor: 'rgb(102, 106, 94)'}}>
+        <h1 class='title'>Game #{game.id}</h1>
 
         <p>Status: {game.status}</p>
 

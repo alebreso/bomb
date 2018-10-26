@@ -3,6 +3,8 @@
   margin: auto;
   padding: 20px;
   width: 60%;
+  font-family: 'Chakra Petch', sans-serif;
+  border: 10px dashed black;
 }
 
 .board-container {
@@ -17,6 +19,11 @@ h1 {
 
 p {
   font-family: 'Chakra Petch', sans-serif;
-  color: yellowgreen;
-  font-weight: bolder 
+  font-size: 1.5em;
+  color: rgb(42, 60, 43);
+  font-weight: 1000;
+}
+
+.title {
+  font-family: 'Chakra Petch', sans-serif;
 }
