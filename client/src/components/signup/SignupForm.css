@@ -5,6 +5,8 @@
 .signup-form {
   text-align: center;
   width: 20%;
-  margin: auto;
   border: 10px dashed black;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
 }

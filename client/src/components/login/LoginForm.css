@@ -12,4 +12,9 @@
 
 body {
   font-family: 'Chakra Petch', sans-serif;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  width: 60%;
+
 }

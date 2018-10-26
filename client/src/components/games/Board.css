@@ -12,8 +12,13 @@
   background: red;
 }
 
+
 body {
   background-image: url('stones.jpg');
   background-size: cover;
   font-family: 'Chakra Petch', sans-serif;
+}
+
+.board-tile.h {
+  background: orange;
 }

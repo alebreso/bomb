@@ -5,9 +5,26 @@ import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import Button from 'material-ui/Button'
 import Paper from 'material-ui/Paper'
-import Card, { CardActions, CardContent } from 'material-ui/Card'
+import Card, { CardActions } from 'material-ui/Card'
 import Typography from 'material-ui/Typography'
 import './GamesList.css'
+import { ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from 'material-ui';
+import { withStyles } from '@material-ui/core/styles';
+
+const StyledButton = withStyles({
+  root: {
+    background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 21,
+    padding: '0 30px',
+    boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)',
+  },
+  label: {
+    textTransform: 'capitalize',
+  },
+})(Button);
 
 class GamesList extends PureComponent {
   componentWillMount() {
@@ -19,6 +36,7 @@ class GamesList extends PureComponent {
 
   renderGame = (game) => {
     const {users, history} = this.props
+
 
     return (<Card key={game.id} className="game-card">
       <CardContent style={{backgroundColor: 'lightgrey', border: '3px solid black'}}>
@@ -45,6 +63,38 @@ class GamesList extends PureComponent {
           Join
         </Button>
       </CardActions>
+
+    return (
+    <Card key={game.id} className="game-card">
+      <ExpansionPanel>
+        <ExpansionPanelSummary  expandIcon={<i class="material-icons">details</i>}>
+          <Typography variant="headline" component="h2">
+            Game #{game.id}
+          </Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography color="textSecondary">
+            This game is played by&nbsp;
+            {
+              game.players
+                .map(player => users[player.userId].firstName)
+                .join(' and ')
+            }
+          </Typography>
+          <Typography color="textSecondary">
+            Status: {game.status}
+          </Typography>
+            <CardActions>
+            <StyledButton
+            size="small"
+            onClick={() => history.push(`/games/${game.id}`)}
+            >
+            JOIN
+            </StyledButton>
+            </CardActions>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+
     </Card>)
   }
 
@@ -58,22 +108,32 @@ class GamesList extends PureComponent {
     if (games === null || users === null) return null
 
     return (
+
     <Paper className="outer-paper" style={{paddingBottom: '50px', paddingTop: '50px', backgroundColor: 'gray' }}>
+
+    <Paper className="outer-paper">
+
       <Button
         color="primary"
         variant="raised"
         onClick={createGame}
+
         className="create-game"
         style={{backgroundColor: 'darkolivegreen'}}
       >
       <i class="material-icons md-36">add</i>
+
+        className="create-game">
+      <i class="material-icons">add</i>
+
         Create Game
       </Button>
 
       <div>
         {games.map(game => this.renderGame(game))}
       </div>
-    </Paper>)
+    </Paper>
+    )
   }
 }
 

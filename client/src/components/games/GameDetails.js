@@ -28,11 +28,22 @@ class GameDetails extends PureComponent {
       row.map((cell, cellIndex) => {
         if (rowIndex === toRow && cellIndex === toCell) {
           let index = 0
+          let symbol = ''
           while(index!==winnerArray.length){
             if(toRow === winnerArray[index][0] && toCell === winnerArray[index][1]) return 'o'
+            if((toRow-1 === winnerArray[index][0] && toCell-1 === winnerArray[index][1]) ||
+            (toRow-1 === winnerArray[index][0] && toCell === winnerArray[index][1]) || 
+            (toRow-1 === winnerArray[index][0] && toCell+1 === winnerArray[index][1]) || 
+            (toRow === winnerArray[index][0] && toCell-1 === winnerArray[index][1]) ||
+            (toRow === winnerArray[index][0] && toCell+1 === winnerArray[index][1]) ||
+            (toRow+1 === winnerArray[index][0] && toCell-1 === winnerArray[index][1]) ||
+            (toRow+1 === winnerArray[index][0] && toCell === winnerArray[index][1]) || 
+            (toRow+1 === winnerArray[index][0] && toCell+1 === winnerArray[index][1])) symbol= 'h'
             index++
           }
-          return 'x'
+          if(symbol==='') return 'x'
+          else return symbol
+
         }
         else return cell;
       })
